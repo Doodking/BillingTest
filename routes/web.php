@@ -13,20 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('register');
-});
+Route::get('/', 'DataController@getRegister');
 
 Route::apiResource('/register', 'BillingController');
 
 Route::delete('/register', 'BillingController@destroy');
 
-// Route::get('/register', 'BillingController@get');
-
-// Route::post('/register', 'BillingController@register');
 
 Route::get('/payment/paymentId={id}', 'DataController@getPayment');
 
-Route::post('/payment/paymentId={id}', 'BillingController@pay');
 
 
